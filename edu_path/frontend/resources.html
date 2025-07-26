@@ -1,0 +1,290 @@
+
+<!-- edu_path/frontend/resources.html -->
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>学习资源 - EduPath</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
+    <link href="https://fonts.loli.net/css?family=Noto+Sans+SC:400,500,700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Noto Sans SC', sans-serif;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            min-height: 100vh;
+        }
+        .particles-js {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+        }
+        .resource-card {
+            transition: all 0.3s ease;
+        }
+        .resource-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(99, 102, 241, 0.3);
+        }
+        .platform-tab {
+            transition: all 0.3s ease;
+        }
+        .platform-tab.active {
+            border-bottom: 3px solid #6366F1;
+            color: #6366F1;
+            font-weight: 600;
+        }
+        .btn-glow {
+            box-shadow: 0 0 15px rgba(99, 102, 241, 0.5);
+        }
+        .btn-glow:hover {
+            box-shadow: 0 0 20px rgba(99, 102, 241, 0.8);
+        }
+        .iframe-container {
+            position: relative;
+            overflow: hidden;
+            padding-top: 56.25%;
+        }
+        .iframe-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+    </style>
+</head>
+<body class="relative overflow-x-hidden">
+    <div id="particles-js" class="particles-js"></div>
+    
+    <header class="py-6 px-4 md:px-8 bg-white bg-opacity-90 shadow-sm">
+        <div class="container mx-auto flex justify-between items-center">
+            <div class="flex items-center space-x-2">
+                <span class="text-3xl">📚</span>
+                <h1 class="text-2xl md:text-3xl font-bold bg-gradient-to-r from-indigo-500 to-purple-600 bg-clip-text text-transparent">EduPath</h1>
+            </div>
+            <nav class="hidden md:flex space-x-6">
+                <a href="index.html" class="text-gray-700 hover:text-indigo-600 font-medium">首页</a>
+                <a href="diagnosis.html" class="text-gray-700 hover:text-indigo-600 font-medium">学习诊断</a>
+                <a href="path.html" class="text-gray-700 hover:text-indigo-600 font-medium">学习路径</a>
+                <a href="#" class="text-indigo-600 font-medium">学习资源</a>
+            </nav>
+            <button class="md:hidden text-2xl">☰</button>
+        </div>
+    </header>
+
+    <main class="container mx-auto px-4 py-12">
+        <section class="text-center mb-16">
+            <h2 class="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-indigo-600 to-purple-700 bg-clip-text text-transparent">跨平台学习资源聚合</h2>
+            <p class="text-xl text-gray-600 max-w-3xl mx-auto mb-8">根据您的学习路径智能推荐优质资源，整合主流学习平台内容</p>
+        </section>
+
+        <section class="mb-12">
+            <div class="bg-white rounded-xl shadow-lg p-6">
+                <div class="flex overflow-x-auto space-x-6 mb-8 pb-2">
+                    <button class="platform-tab px-4 py-2 active" data-platform="all">全部资源</button>
+                    <button class="platform-tab px-4 py-2" data-platform="coursera">Coursera</button>
+                    <button class="platform-tab px-4 py-2" data-platform="edx">edX</button>
+                    <button class="platform-tab px-4 py-2" data-platform="netease">网易云课堂</button>
+                    <button class="platform-tab px-4 py-2" data-platform="youtube">YouTube</button>
+                    <button class="platform-tab px-4 py-2" data-platform="bilibili">Bilibili</button>
+                </div>
+
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
+                    <!-- 资源卡片1 -->
+                    <div class="resource-card bg-white p-6 rounded-xl border border-gray-200" data-platform="coursera">
+                        <div class="flex items-center mb-4">
+                            <img src="https://picsum.photos/80/80?random=1" alt="Coursera" class="w-12 h-12 rounded-full object-cover mr-4">
+                            <div>
+                                <h3 class="font-bold">Python编程入门</h3>
+                                <p class="text-sm text-gray-500">Coursera · 密歇根大学</p>
+                            </div>
+                        </div>
+                        <p class="text-gray-600 mb-4">适合初学者的Python编程基础课程，涵盖变量、循环、函数等核心概念</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-sm text-indigo-600">⭐ 4.8 (2.1k评价)</span>
+                            <span class="text-sm text-gray-500">12小时</span>
+                        </div>
+                    </div>
+
+                    <!-- 资源卡片2 -->
+                    <div class="resource-card bg-white p-6 rounded-xl border border-gray-200" data-platform="edx">
+                        <div class="flex items-center mb-4">
+                            <img src="https://picsum.photos/80/80?random=2" alt="edX" class="w-12 h-12 rounded-full object-cover mr-4">
+                            <div>
+                                <h3 class="font-bold">数据结构与算法</h3>
+                                <p class="text-sm text-gray-500">edX · 哈佛大学</p>
+                            </div>
+                        </div>
+                        <p class="text-gray-600 mb-4">系统学习常见数据结构和算法，包含大量实践练习和案例分析</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-sm text-indigo-600">⭐ 4.7 (1.5k评价)</span>
+                            <span class="text-sm text-gray-500">24小时</span>
+                        </div>
+                    </div>
+
+                    <!-- 资源卡片3 -->
+                    <div class="resource-card bg-white p-6 rounded-xl border border-gray-200" data-platform="netease">
+                        <div class="flex items-center mb-4">
+                            <img src="https://picsum.photos/80/80?random=3" alt="网易云课堂" class="w-12 h-12 rounded-full object-cover mr-4">
+                            <div>
+                                <h3 class="font-bold">Web开发全栈实战</h3>
+                                <p class="text-sm text-gray-500">网易云课堂 · 前端专家</p>
+                            </div>
+                        </div>
+                        <p class="text-gray-600 mb-4">从HTML/CSS到Node.js的全栈开发课程，包含3个实战项目</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-sm text-indigo-600">⭐ 4.9 (3.2k评价)</span>
+                            <span class="text-sm text-gray-500">36小时</span>
+                        </div>
+                    </div>
+
+                    <!-- 资源卡片4 -->
+                    <div class="resource-card bg-white p-6 rounded-xl border border-gray-200" data-platform="youtube">
+                        <div class="flex items-center mb-4">
+                            <img src="https://picsum.photos/80/80?random=4" alt="YouTube" class="w-12 h-12 rounded-full object-cover mr-4">
+                            <div>
+                                <h3 class="font-bold">机器学习基础</h3>
+                                <p class="text-sm text-gray-500">YouTube · 斯坦福公开课</p>
+                            </div>
+                        </div>
+                        <p class="text-gray-600 mb-4">Andrew Ng教授的经典机器学习课程，包含数学推导和代码实现</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-sm text-indigo-600">⭐ 4.9 (15k评价)</span>
+                            <span class="text-sm text-gray-500">20小时</span>
+                        </div>
+                    </div>
+
+                    <!-- 资源卡片5 -->
+                    <div class="resource-card bg-white p-6 rounded-xl border border-gray-200" data-platform="bilibili">
+                        <div class="flex items-center mb-4">
+                            <img src="https://picsum.photos/80/80?random=5" alt="Bilibili" class="w-12 h-12 rounded-full object-cover mr-4">
+                            <div>
+                                <h3 class="font-bold">数据库系统原理</h3>
+                                <p class="text-sm text-gray-500">Bilibili · 清华大学</p>
+                            </div>
+                        </div>
+                        <p class="text-gray-600 mb-4">关系型数据库原理与SQL优化，包含MySQL实战案例</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-sm text-indigo-600">⭐ 4.8 (8.7k评价)</span>
+                            <span class="text-sm text-gray-500">18小时</span>
+                        </div>
+                    </div>
+
+                    <!-- 资源卡片6 -->
+                    <div class="resource-card bg-white p-6 rounded-xl border border-gray-200" data-platform="coursera">
+                        <div class="flex items-center mb-4">
+                            <img src="https://picsum.photos/80/80?random=6" alt="Coursera" class="w-12 h-12 rounded-full object-cover mr-4">
+                            <div>
+                                <h3 class="font-bold">系统设计与架构</h3>
+                                <p class="text-sm text-gray-500">Coursera · 伊利诺伊大学</p>
+                            </div>
+                        </div>
+                        <p class="text-gray-600 mb-4">大规模分布式系统设计原则，包含CAP理论和微服务架构</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-sm text-indigo-600">⭐ 4.7 (1.2k评价)</span>
+                            <span class="text-sm text-gray-500">16小时</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="text-center">
+                    <button id="load-more" class="px-6 py-2 border border-indigo-600 text-indigo-600 rounded-full hover:bg-indigo-50 transition duration-300">
+                        加载更多资源
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <section class="bg-white rounded-xl shadow-lg p-6 mb-12">
+            <h3 class="text-2xl font-bold mb-6 text-indigo-700">推荐课程预览</h3>
+            
+            <div class="iframe-container">
+                <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+        </section>
+
+        <section class="text-center">
+            <button id="personalized-recommend" class="px-8 py-3 bg-indigo-600 text-white rounded-full font-medium btn-glow hover:bg-indigo-700 transition duration-300">获取个性化推荐</button>
+        </section>
+    </main>
+
+    <footer class="bg-gray-800 text-white py-8">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-4 md:mb-0">
+                    <h2 class="text-xl font-bold mb-2">EduPath</h2>
+                    <p class="text-gray-400">让每个人的学习都独一无二</p>
+                </div>
+                <div class="flex space-x-4">
+                    <a href="#" class="text-gray-400 hover:text-white">关于我们</a>
+                    <a href="#" class="text-gray-400 hover:text-white">隐私政策</a>
+                    <a href="#" class="text-gray-400 hover:text-white">联系我们</a>
+                </div>
+            </div>
+            <div class="mt-6 text-center text-gray-500 text-sm">
+                © 2025 EduPath - 个性化学习路径推荐系统
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/particles.js/2.0.0/particles.min.js"></script>
+    <script>
+        // 粒子效果初始化
+        document.addEventListener('DOMContentLoaded', function() {
+            particlesJS('particles-js', {
+                particles: {
+                    number: { value: 80, density: { enable: true, value_area: 800 } },
+                    color: { value: "#6366F1" },
+                    shape: { type: "circle" },
+                    opacity: { value: 0.5, random: true },
+                    size: { value: 3, random: true },
+                    line_linked: { enable: true, distance: 150, color: "#8B5CF6", opacity: 0.4, width: 1 },
+                    move: { enable: true, speed: 2, direction: "none", random: true, straight: false, out_mode: "out" }
+                },
+                interactivity: {
+                    detect_on: "canvas",
+                    events: {
+                        onhover: { enable: true, mode: "repulse" },
+                        onclick: { enable: true, mode: "push" }
+                    }
+                }
+            });
+
+            // 平台标签切换
+            const platformTabs = document.querySelectorAll('.platform-tab');
+            const resourceCards = document.querySelectorAll('.resource-card');
+            
+            platformTabs.forEach(tab => {
+                tab.addEventListener('click', function() {
+                    const platform = this.getAttribute('data-platform');
+                    
+                    // 更新标签状态
+                    platformTabs.forEach(t => t.classList.remove('active'));
+                    this.classList.add('active');
+                    
+                    // 筛选资源卡片
+                    if (platform === 'all') {
+                        resourceCards.forEach(card => card.style.display = 'block');
+                    } else {
+                        resourceCards.forEach(card => {
+                            card.style.display = card.getAttribute('data-platform') === platform ? 'block' : 'none';
+                        });
+                    }
+                });
+            });
+
+            // 按钮交互
+            document.getElementById('load-more').addEventListener('click', function() {
+                alert('正在开发中：加载更多学习资源');
+            });
+
+            document.getElementById('personalized-recommend').addEventListener('click', function() {
+                alert('正在开发中：根据您的学习路径和兴趣生成个性化推荐');
+            });
+        });
+    </script>
+</body>
+</html>
